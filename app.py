@@ -176,18 +176,18 @@ if option_transport == "Bus":
   delta_mean_1 = round(((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de temps moyen avec le Covoiturage", dif_mean_1, delta_mean_1)
   col2.metric("Différence de temps moyen avec le Train", dif_mean_2, delta_mean_2)
 
-  dif_mean_1 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
-  dif_mean_2 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
+  dif_mean_1 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
+  dif_mean_2 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
 
   delta_mean_1 = round(((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de prix moyen avec le Covoiturage", dif_mean_1, delta_mean_1)
   col2.metric("Différence de prix moyen avec le Train", dif_mean_2, delta_mean_2)
@@ -200,18 +200,18 @@ if option_transport == "Covoiturage":
   delta_mean_1 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de temps moyen avec le Bus", dif_mean_1, delta_mean_1)
   col2.metric("Différence de temps moyen avec le Train", dif_mean_2, delta_mean_2)
 
-  dif_mean_1 = str(round((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
-  dif_mean_2 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
+  dif_mean_1 = str(round((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
+  dif_mean_2 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
 
   delta_mean_1 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de prix moyen avec le Bus", dif_mean_1, delta_mean_1)
   col2.metric("Différence de prix moyen avec le Train", dif_mean_2, delta_mean_2)
@@ -224,18 +224,18 @@ if option_transport == "Train":
   delta_mean_1 = round(((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['time'] / df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['time'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de temps moyen avec le Bus", dif_mean_1, delta_mean_1)
   col2.metric("Différence de temps moyen avec le Train", dif_mean_2, delta_mean_2)
 
-  dif_mean_1 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
-  dif_mean_2 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " H"
+  dif_mean_1 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
+  dif_mean_2 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
 
   delta_mean_1 = round(((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
 
-  dif_mean_2 = str(dif_mean_2) + "%"
+  delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de prix moyen avec le Bus", dif_mean_1, delta_mean_1)
   col2.metric("Différence de prix moyen avec le Covoiturage", dif_mean_2, delta_mean_2)
