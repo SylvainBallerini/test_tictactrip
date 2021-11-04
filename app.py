@@ -72,6 +72,8 @@ aggfunc=[np.mean, np.max, np.min, len])
 
 st.title("Test Tictactrip")
 
+st.subheader("Question 1 : extraire les infos intéressantes type prix min, moyen et max, durée min/max/moyenne par trajet")
+
 # récupération de la liste des villes d'origines
 li_o_city = np.unique(df_1['o_city'])
 
@@ -112,6 +114,8 @@ col3.metric("Max", str(round(df_f.loc[li_metric[2]].loc["price_in_cents"]/100,2)
 
 # deuxième question : différence de prix moyen et durée selon le train, 
 # le bus et le covoit selon la distance du trajet (0-200km, 201-800km, 800-2000km, 2000+km) 
+
+st.subheader("Question 2 : différence de prix moyen et durée selon le train, le bus et le covoit selon la distance du trajet (0-200km, 201-800km, 800-2000km, 2000+km) ")
 
 df_2 = data_ticket[['departure_ts', 'arrival_ts', 'price_in_cents', 'o_city', 'd_city','company']]
 
@@ -206,7 +210,7 @@ if option_transport == "Covoiturage":
   col2.metric("Différence de temps moyen avec le Train", dif_mean_2, delta_mean_2)
 
   dif_mean_1 = str(round((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
-  dif_mean_2 = str(round((df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
+  dif_mean_2 = str(round((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
 
   delta_mean_1 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
   delta_mean_2 = round(((df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] / df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])*100),2)
@@ -227,7 +231,7 @@ if option_transport == "Train":
   delta_mean_1 = str(delta_mean_1) + "%"
   delta_mean_2 = str(delta_mean_2) + "%"
   col1.metric("Différence de temps moyen avec le Bus", dif_mean_1, delta_mean_1)
-  col2.metric("Différence de temps moyen avec le Train", dif_mean_2, delta_mean_2)
+  col2.metric("Différence de temps moyen avec le Covoiturage", dif_mean_2, delta_mean_2)
 
   dif_mean_1 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Bus'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
   dif_mean_2 = str(round((df_pt_3.loc['Train'].loc[option_label_distance].loc['mean'].loc['price_in_cents'] - df_pt_3.loc['Covoiturage'].loc[option_label_distance].loc['mean'].loc['price_in_cents'])/100,2)) + " €"
@@ -304,6 +308,6 @@ df = user_input()
 
 prediction = model_DTR.predict(df)
 
-st.subheader("Prediction du prix d'un voyage ")
+st.subheader("Prediction du prix d'un voyage avec du Machine Learning")
 st.subheader("Le prix du voyage serait de : ")
 st.write(str(str(round(prediction[0]/100,2)) + " €"))
